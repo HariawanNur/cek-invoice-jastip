@@ -1,5 +1,5 @@
 import { jsPDF } from 'jspdf'
-import { BUSINESS_PRESETS, ADMIN_WA } from './config'
+import { BUSINESS_PRESETS, ADMIN_WA } from '../config'
 
 const PALETTE = {
   primary: [79, 70, 229],      // Indigo #4f46e5

@@ -33,7 +33,7 @@ import {
   getAdminPin,
   setAdminPin,
   resetStoredOrders
-} from './data'
+} from '../services/data'
 
 export default function AdminDashboard({
   businessType,

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { normalisasiHp, submitOrder } from './data'
-import { BUSINESS_PRESETS, ADMIN_WA } from './config'
+import { normalisasiHp, submitOrder } from '../services/data'
+import { BUSINESS_PRESETS, ADMIN_WA } from '../config'
 import confetti from 'canvas-confetti'
 import {
   ShoppingBag,

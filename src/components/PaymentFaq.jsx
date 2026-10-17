@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BUSINESS_PRESETS, DEFAULT_BANKS, ADMIN_WA } from './config'
+import { BUSINESS_PRESETS, DEFAULT_BANKS, ADMIN_WA } from '../config'
 import {
   CreditCard,
   Copy,

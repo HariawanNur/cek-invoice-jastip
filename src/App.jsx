@@ -4,10 +4,10 @@ import {
   ADMIN_WA,
   NAMA_USAHA
 } from './config'
-import OrderForm from './OrderForm'
-import Calculator from './Calculator'
-import PaymentFaq from './PaymentFaq'
-import AdminDashboard from './AdminDashboard'
+import OrderForm from './components/OrderForm'
+import Calculator from './components/Calculator'
+import PaymentFaq from './components/PaymentFaq'
+import AdminDashboard from './components/AdminDashboard'
 import {
   getContohNomor,
   findCustomer,
@@ -20,8 +20,8 @@ import {
   setActiveBusinessType,
   getShippingPreference,
   setShippingPreference
-} from './data'
-import { bagikanPdf } from './pdf'
+} from './services/data'
+import { bagikanPdf } from './services/pdf'
 import confetti from 'canvas-confetti'
 import {
   Search,

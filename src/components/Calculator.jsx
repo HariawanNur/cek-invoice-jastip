@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { BUSINESS_PRESETS, EXCHANGE_RATES } from './config'
-import { rupiah } from './data'
+import { BUSINESS_PRESETS, EXCHANGE_RATES } from '../config'
+import { rupiah } from '../services/data'
 import {
   Calculator as CalcIcon,
   Copy,

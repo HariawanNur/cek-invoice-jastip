@@ -1,4 +1,4 @@
-import { API_URL, BUSINESS_PRESETS } from './config'
+import { API_URL, BUSINESS_PRESETS } from '../config'
 
 // Dataset Demo Terpadu untuk Setiap Jenis Bisnis (Sangat Kuat untuk Presentasi Jualan)
 export const MULTI_BUSINESS_DEMO = {
