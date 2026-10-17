@@ -196,14 +196,16 @@ body {
 .header-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
   text-decoration: none;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .header-brand-logo {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
@@ -212,6 +214,11 @@ body {
   justify-content: center;
   box-shadow: 0 4px 12px var(--primary-glow);
   flex-shrink: 0;
+}
+
+.header-brand-info {
+  min-width: 0;
+  overflow: hidden;
 }
 
 .header-brand-title {
@@ -223,6 +230,19 @@ body {
   align-items: center;
   gap: 6px;
   line-height: 1.2;
+  min-width: 0;
+}
+
+.brand-title-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  min-width: 0;
+}
+
+.verified-icon {
+  flex-shrink: 0;
 }
 
 .header-brand-subtitle {
@@ -230,6 +250,9 @@ body {
   color: var(--text-muted);
   font-weight: 600;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header-nav-links {
@@ -275,6 +298,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 /* Modern Unified Header Controls */
@@ -336,11 +360,14 @@ body {
 .preset-name-short {
   display: none;
 }
+.preset-name-full {
+  display: inline;
+}
 
 @media (max-width: 768px) {
   .header-container {
-    padding: 10px 12px;
-    gap: 8px;
+    padding: 10px 14px;
+    gap: 10px;
   }
   .header-brand-logo {
     width: 36px;
@@ -349,16 +376,12 @@ body {
   }
   .header-brand-title {
     font-size: 0.92rem;
-    max-width: 135px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .header-brand-subtitle {
     display: none;
   }
   .header-actions-group {
-    gap: 5px;
+    gap: 6px;
   }
   .hdr-btn {
     height: 34px;
@@ -369,20 +392,21 @@ body {
     width: 34px;
   }
   .hdr-btn.cs-btn span {
-    display: none;
+    display: none !important;
   }
   .preset-name-full {
-    display: none;
+    display: none !important;
   }
   .preset-name-short {
-    display: inline;
+    display: inline !important;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Screens (< 640px) */
+@media (max-width: 640px) {
   .header-container {
-    padding: 8px 10px;
-    gap: 6px;
+    padding: 8px 12px;
+    gap: 8px;
   }
   .header-brand-logo {
     width: 32px;
@@ -390,8 +414,7 @@ body {
     border-radius: 8px;
   }
   .header-brand-title {
-    font-size: 0.84rem;
-    max-width: 100px;
+    font-size: 0.86rem;
   }
   .hdr-btn {
     height: 32px;
@@ -400,12 +423,37 @@ body {
   }
   .hdr-btn.icon-only {
     width: 32px;
+    padding: 0;
   }
+  /* On mobile screens, hide ship-btn and customizer-btn from navbar to give brand full breathing room */
+  /* Both are easily accessible anytime inside the 🏷️ Bisnis modal */
   .hdr-btn.ship-btn {
-    padding: 0 8px;
+    display: none !important;
   }
-  .hdr-btn.ship-btn .ship-label {
-    display: none;
+  .hdr-btn.customizer-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-container {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  .header-brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+  .header-brand-title {
+    font-size: 0.8rem;
+  }
+  .hdr-btn {
+    height: 30px;
+    padding: 0 6px;
+    font-size: 0.7rem;
+  }
+  .hdr-btn.icon-only {
+    width: 30px;
   }
 }
 
@@ -567,8 +615,14 @@ body {
 .site-main-container {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 28px 20px 48px;
+  padding: 24px 16px 48px;
   width: 100%;
+}
+
+@media (max-width: 640px) {
+  .site-main-container {
+    padding: 16px 12px 40px;
+  }
 }
 
 /* Invoice Dual View on Wide Desktop */

@@ -642,12 +642,12 @@ export default function App() {
         <div className="header-container">
           <div className="header-brand" onClick={() => setTab('cek')} title="Kembali ke Beranda">
             <div className="header-brand-logo">
-              {businessType === 'servis' ? <Wrench size={22} /> : businessType === 'kuliner' ? <Utensils size={22} /> : businessType === 'percetakan' ? <Printer size={22} /> : businessType === 'jasa' ? <Briefcase size={22} /> : businessType === 'jastip' ? <Plane size={22} /> : <ShoppingBag size={22} />}
+              {businessType === 'servis' ? <Wrench size={20} /> : businessType === 'kuliner' ? <Utensils size={20} /> : businessType === 'percetakan' ? <Printer size={20} /> : businessType === 'jasa' ? <Briefcase size={20} /> : businessType === 'jastip' ? <Plane size={20} /> : <ShoppingBag size={20} />}
             </div>
             <div className="header-brand-info">
               <h1 className="header-brand-title">
-                {displayedStoreName}
-                <BadgeCheck size={18} className="verified-icon" />
+                <span className="brand-title-text">{displayedStoreName}</span>
+                <BadgeCheck size={16} className="verified-icon" />
               </h1>
               <p className="header-brand-subtitle">{currentPreset.tagline}</p>
             </div>
@@ -675,19 +675,19 @@ export default function App() {
             </button>
 
             <button
-              className="hdr-btn icon-only"
+              className="hdr-btn icon-only customizer-btn"
               onClick={() => setShowCustomizerModal(true)}
               title="Kustomisasi Toko & Warna Brand"
             >
-              <Palette size={18} />
+              <Palette size={17} />
             </button>
 
             <button
-              className="hdr-btn icon-only"
+              className="hdr-btn icon-only theme-btn"
               onClick={toggleTheme}
               title={theme === 'light' ? 'Mode Gelap' : 'Mode Terang'}
             >
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+              {theme === 'light' ? <Moon size={17} /> : <Sun size={17} />}
             </button>
 
             <a
@@ -705,10 +705,10 @@ export default function App() {
       </header>
 
       {/* 2. MAIN APPLICATION CONTENT (CLEAN, USER-FRIENDLY & CENTERED) */}
-      <main className="site-main-container" style={{ flex: 1, padding: '24px 16px 48px', maxWidth: tab === 'admin' ? '1120px' : '760px', margin: '0 auto', width: '100%' }}>
+      <main className="site-main-container" style={{ flex: 1, maxWidth: tab === 'admin' ? '1120px' : '760px', margin: '0 auto', width: '100%' }}>
         
         {/* Navigation Tabs (Single clean segmented bar, accessible everywhere) */}
-        <nav className="segmented-tabs" role="tablist" style={{ marginBottom: '22px' }}>
+        <nav className="segmented-tabs" role="tablist">
           <button
             role="tab"
             aria-selected={tab === 'cek'}
@@ -1339,6 +1339,20 @@ export default function App() {
                 onClick={toggleShipping}
               >
                 {hasShipping ? '✓ Aktif' : '✕ Ambil di Toko'}
+              </button>
+            </div>
+
+            {/* Sub-setting: Kustomisasi Warna & Toko */}
+            <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid var(--border-color)' }}>
+              <button
+                className="btn-secondary"
+                style={{ width: '100%', fontSize: '0.82rem', padding: '10px' }}
+                onClick={() => {
+                  setShowBizModal(false)
+                  setShowCustomizerModal(true)
+                }}
+              >
+                <Palette size={16} /> Kustomisasi Warna Tema & Nama Toko
               </button>
             </div>
           </div>
