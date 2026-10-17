@@ -660,7 +660,8 @@ export default function App() {
               onClick={() => setShowBizModal(true)}
               title="Ganti Jenis Bisnis Demo"
             >
-              <span>🏷️ {currentPreset.name}</span>
+              <span className="preset-name-full">🏷️ {currentPreset.name}</span>
+              <span className="preset-name-short">🏷️ Bisnis</span>
               <ChevronDown size={14} />
             </button>
 
@@ -669,7 +670,8 @@ export default function App() {
               onClick={toggleShipping}
               title="Ubah Mode Pengiriman (Opsi A)"
             >
-              {hasShipping ? '🚚 Kurir' : '📍 Non-Kurir'}
+              <span className="ship-icon">{hasShipping ? '🚚' : '📍'}</span>
+              <span className="ship-label">{hasShipping ? 'Kurir' : 'Non-Kurir'}</span>
             </button>
 
             <button
@@ -774,11 +776,11 @@ export default function App() {
               </div>
 
               <form
+                className="search-form-row"
                 onSubmit={(e) => {
                   e.preventDefault()
                   cekInvoice()
                 }}
-                style={{ display: 'flex', gap: '8px' }}
               >
                 <div style={{ position: 'relative', flex: 1 }}>
                   <PhoneCall size={18} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
@@ -796,9 +798,8 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="btn-primary"
+                  className="btn-primary search-submit-btn"
                   disabled={loading}
-                  style={{ height: '46px', padding: '0 20px', fontSize: '0.88rem', whiteSpace: 'nowrap' }}
                 >
                   <Search size={16} />
                   <span>{loading ? 'Mencari...' : 'Cek Status'}</span>

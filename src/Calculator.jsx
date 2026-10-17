@@ -372,7 +372,7 @@ export default function Calculator({
 
           {/* Jika pilih custom produk */}
           {olshopSelected === 'custom' && (
-            <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '8px', marginBottom: '14px' }}>
+            <div className="order-grid-2" style={{ marginBottom: '14px' }}>
               <div>
                 <label className="input-label">Nama Produk Sendiri</label>
                 <input
@@ -396,7 +396,7 @@ export default function Calculator({
           )}
 
           {/* Jumlah Beli & Opsi Pengiriman */}
-          <div style={{ display: 'grid', gridTemplateColumns: hasShipping ? '1fr 1fr' : '1fr', gap: '8px' }}>
+          <div className={hasShipping ? 'order-grid-2' : ''}>
             <div className="input-group">
               <label className="input-label">Jumlah Pembelian (Qty)</label>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -537,7 +537,7 @@ export default function Calculator({
             </select>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+          <div className="order-grid-2">
             <div className="input-group">
               <label className="input-label">Jumlah Porsi (Box/Pax)</label>
               <input
@@ -588,7 +588,7 @@ export default function Calculator({
             </select>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+          <div className="order-grid-2">
             <div className="input-group">
               <label className="input-label">Jumlah (Pcs/Meter)</label>
               <input
@@ -683,7 +683,7 @@ export default function Calculator({
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '8px' }}>
+          <div className="order-grid-2">
             <div className="input-group">
               <label className="input-label">Nama Barang Titipan</label>
               <input
